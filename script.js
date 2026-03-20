@@ -1,6 +1,6 @@
 function iniciarHack() {
     const btn = document.getElementById('btn-start');
-    const btnGame = document.getElementById('btn-game'); // Chama o novo botão
+    const btnGame = document.getElementById('btn-game'); 
     const progressContainer = document.getElementById('progress-container');
     const progressFill = document.getElementById('progress-fill');
     const progressText = document.getElementById('progress-text');
@@ -12,7 +12,7 @@ function iniciarHack() {
     btn.innerText = "INJETANDO...";
     progressContainer.style.display = 'block';
     resultBox.style.display = 'none';
-    btnGame.style.display = 'none'; // Esconde o botão do jogo caso reinicie
+    btnGame.style.display = 'none'; 
     resultBox.innerHTML = '';
     terminal.innerHTML = '> Estabelecendo conexão com o servidor...<br>';
     
@@ -65,8 +65,15 @@ function iniciarHack() {
 function mostrarResultado() {
     const resultBox = document.getElementById('result-box');
     
-    const valoresAposta = ["0,40", "0,80", "1,20", "2,00", "4,00"];
-    const aposta = valoresAposta[Math.floor(Math.random() * valoresAposta.length)];
+    // Lista de valores de aposta atualizada
+    const valoresAposta = ["0,40", "0,80", "1,20", "1,60", "2,00"];
+    
+    // Sorteia valores para cada tipo de giro
+    const apostaNormal = valoresAposta[Math.floor(Math.random() * valoresAposta.length)];
+    const apostaTurbo = valoresAposta[Math.floor(Math.random() * valoresAposta.length)];
+    const apostaAuto = valoresAposta[Math.floor(Math.random() * valoresAposta.length)];
+    
+    // Sorteia a quantidade de giros
     const girosNormal = Math.floor(Math.random() * 4) + 1; 
     const girosTurbo = Math.floor(Math.random() * 4) + 1; 
     const girosAuto = [10, 30, 50][Math.floor(Math.random() * 3)]; 
@@ -75,9 +82,9 @@ function mostrarResultado() {
         <div style="text-align: center; margin-bottom: 10px; color: #fff;">
             ⚠️ BRECHA ENCONTRADA ⚠️
         </div>
-        - Gire <span>${girosNormal} vez(es)</span> modo <span>NORMAL</span><br><br>
-        - Gire <span>${girosTurbo} vez(es)</span> modo <span>TURBO</span><br><br>
-        - Coloque a <span>R$ ${aposta} ${girosAuto}x</span> no <span>AUTOMÁTICO MODO TURBO</span><br><br>
+        - Gire <span>${girosNormal} vez(es)</span> modo <span>NORMAL</span> a <span>${apostaNormal}</span><br><br>
+        - Gire <span>${girosTurbo} vez(es)</span> modo <span>TURBO</span> a <span>${apostaTurbo}</span><br><br>
+        - Coloque a <span>R$ ${apostaAuto} ${girosAuto}x</span> no <span>AUTOMÁTICO MODO TURBO</span><br><br>
         <div style="text-align: center; font-size: 12px; margin-top: 10px;">
             Validade do padrão: 2 minutos
         </div>
@@ -85,8 +92,7 @@ function mostrarResultado() {
     resultBox.style.display = 'block';
 }
 
-// Função do novo botão
 function irParaJogo() {
-    // Redireciona o usuário para o site do jogo em uma nova aba (ou aba atual no iOS dependendo do navegador)
-    window.open('https://www.sol857.com/home/embedded?id=157509010', '_blank');
+    // Redireciona diretamente para o link fornecido do jogo
+    window.location.href = 'https://www.sol857.com/home/embedded?id=157509010';
 }
