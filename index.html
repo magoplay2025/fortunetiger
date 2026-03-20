@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Simulador - Radar Hacker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="hacker-container">
+        <h1>[ Tiger Exploit v1.0 ]</h1>
+        
+        <div class="terminal" id="terminal">
+            > Aguardando comando do usuário...<br>
+        </div>
+
+        <div class="progress-container" id="progress-container">
+            <div class="progress-fill" id="progress-fill"></div>
+            <div class="progress-text" id="progress-text">0%</div>
+        </div>
+
+        <button class="btn" id="btn-start" onclick="iniciarHack()">Gerar Sinal</button>
+
+        <div class="result-box" id="result-box">
+            </div>
+
+        <button class="btn btn-game" id="btn-game" onclick="irParaJogo()" style="display: none;">Executar Estratégia no Jogo</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
