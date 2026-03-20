@@ -65,7 +65,7 @@ function iniciarHack() {
 function mostrarResultado() {
     const resultBox = document.getElementById('result-box');
     
-    // Lista de valores de aposta atualizada
+    // Lista de valores de aposta
     const valoresAposta = ["0,40", "0,80", "1,20", "1,60", "2,00"];
     
     // Sorteia valores para cada tipo de giro
@@ -93,6 +93,6 @@ function mostrarResultado() {
 }
 
 function irParaJogo() {
-    // Redireciona diretamente para o link fornecido do jogo
-    window.location.href = 'https://www.sol857.com/home/embedded?id=157509010';
+    // Agora o link abre em uma nova aba no navegador (_blank)
+    window.open('https://www.sol857.com/home/embedded?id=157509010', '_blank');
 }
