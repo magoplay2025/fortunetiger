@@ -65,18 +65,18 @@ function iniciarHack() {
 function mostrarResultado() {
     const resultBox = document.getElementById('result-box');
     
-    // Lista de valores de aposta
+    // Lista de valores de aposta apenas para o modo automático
     const valoresAposta = ["0,40", "0,80", "1,20", "1,60", "2,00"];
     
-    // Sorteia valores para cada tipo de giro
-    const apostaNormal = valoresAposta[Math.floor(Math.random() * valoresAposta.length)];
-    const apostaTurbo = valoresAposta[Math.floor(Math.random() * valoresAposta.length)];
-    const apostaAuto = valoresAposta[Math.floor(Math.random() * valoresAposta.length)];
+    // Regras de valores fixos conforme solicitado
+    const apostaNormal = "0,40"; // Sempre 0,40
+    const apostaTurbo = "0,80";  // Sempre 0,80
+    const apostaAuto = valoresAposta[Math.floor(Math.random() * valoresAposta.length)]; // Aleatório
     
-    // Sorteia a quantidade de giros
-    const girosNormal = Math.floor(Math.random() * 4) + 1; 
-    const girosTurbo = Math.floor(Math.random() * 4) + 1; 
-    const girosAuto = [10, 30, 50][Math.floor(Math.random() * 3)]; 
+    // Regras de quantidade de giros
+    const girosNormal = Math.floor(Math.random() * 4) + 1; // De 1 a 4 giros
+    const girosTurbo = Math.floor(Math.random() * 2) + 1;  // Máximo de 2 giros (1 ou 2)
+    const girosAuto = [10, 30, 50][Math.floor(Math.random() * 3)]; // Aleatório entre 10, 30 ou 50
 
     resultBox.innerHTML = `
         <div style="text-align: center; margin-bottom: 10px; color: #fff;">
@@ -93,6 +93,5 @@ function mostrarResultado() {
 }
 
 function irParaJogo() {
-    // Agora o link abre em uma nova aba no navegador (_blank)
     window.open('https://www.sol857.com/home/embedded?id=157509010', '_blank');
 }
